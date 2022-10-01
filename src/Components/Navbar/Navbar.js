@@ -40,7 +40,11 @@ export const Navbar = () => {
           </motion.div>
         )}
       </div>
-      <a target='_blank' rel='noreferrer' href="https://drive.google.com/file/d/1Ua56agbyU2P4gVgxkebHpAqtnxNsEDpT/view?usp=sharing">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://drive.google.com/file/d/1Che493f7GoLI0zrcT1O2Hp0nXRTU03Tl/view?usp=sharing"
+      >
         CV
       </a>
     </nav>
