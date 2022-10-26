@@ -43,7 +43,7 @@ export const Navbar = () => {
       <a
         target="_blank"
         rel="noreferrer"
-        href="https://drive.google.com/file/d/1Che493f7GoLI0zrcT1O2Hp0nXRTU03Tl/view?usp=sharing"
+        href="https://drive.google.com/file/d/1yn_llNGVVtFU1ITYi4O9KJTqSXnxbuam/view?usp=sharing"
       >
         CV
       </a>
