@@ -1,6 +1,7 @@
 import React from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
+import Carousel from "framer-motion-carousel";
 import { AppWrapp, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
@@ -57,7 +58,8 @@ const Work = () => {
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio"
-      >
+        >
+        <Carousel autoPlay={false}>
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
@@ -100,6 +102,7 @@ const Work = () => {
             </div>
           </div>
         ))}
+      </Carousel>
       </motion.div>
     </>
   );
