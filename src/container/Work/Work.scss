@@ -44,17 +44,19 @@
 
 .app__work-portfolio {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
+  max-width: 620px;
+  width: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  margin: 0 auto;
+
 
 
   .app__work-item {
-    width: 270px;
+    min-width: 300px;
     flex-direction: column;
 
-    margin: 0 auto;
+    margin: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: #fff;
@@ -77,14 +79,11 @@
       border-radius: 0.75rem;
     }
 
+
     @media screen and (max-width: 300px) {
       width: 100%;
       margin: 1rem;
     }
-  }
-
-  @media screen and (max-width: 430px) {
-    width: 100%;
   }
 
 }
@@ -164,5 +163,15 @@
     border-radius: 10px;
     background-color: #fff;
     top: -25px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .app__work-portfolio::-webkit-scrollbar{
+    display: none;
+  }
+  .app__work-portfolio{
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
   }
 }

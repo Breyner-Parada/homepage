@@ -36,6 +36,34 @@ const Work = () => {
     });
   }, []);
 
+  React.useEffect(() => {
+    const container = document.getElementById("container");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    if (container) {
+      container.addEventListener("mousedown", (e) => {
+        isDown = true;
+        container.classList.add("active");
+        
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+      });
+      container.addEventListener("mouseup", () => {
+        isDown = false;
+        container.classList.remove("active");
+      });
+      container.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = x - startX; //scroll-fast
+        container.scrollLeft = scrollLeft - walk;
+      });
+    }
+  }, []);
+
   return (
     <>
       <h2 className="head-text">
@@ -58,8 +86,8 @@ const Work = () => {
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio"
+        id="container"
         >
-        <Carousel autoPlay={false}>
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
@@ -102,7 +130,6 @@ const Work = () => {
             </div>
           </div>
         ))}
-      </Carousel>
       </motion.div>
     </>
   );
